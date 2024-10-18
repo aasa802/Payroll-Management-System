@@ -68,7 +68,7 @@ Open your web browser and go to `http://127.0.0.1:5000/`.
 ### Directory Structure
 
 After cloning the repository, the directory structure will look like this:
-
+```
 Payroll-Management-System/
 │
 ├── src/
@@ -88,6 +88,7 @@ Payroll-Management-System/
 │
 ├── README.md                 # Project overview and instructions
 └── LICENSE                   # License information
+```
 
 ### Future Enhancements
 
