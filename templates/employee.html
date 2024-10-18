@@ -1,0 +1,25 @@
+<!-- templates/employee.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Manage Payroll</title>
+</head>
+<body>
+    <h1>Manage Payroll</h1>
+    <form action="/payroll" method="POST">
+        <select name="employee_id">
+            {% for employee in employees %}
+            <option value="{{ employee[0] }}">{{ employee[1] }}</option>
+            {% endfor %}
+        </select>
+        <input type="number" name="hours_worked" placeholder="Hours Worked" required>
+        <input type="text" name="month" placeholder="Month" required>
+        <input type="number" name="year" placeholder="Year" required>
+        <button type="submit">Add Payroll Record</button>
+    </form>
+    <a href="/">Back to Employee Management</a>
+</body>
+</html>
