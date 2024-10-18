@@ -1,0 +1,28 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Payroll Management System</title>
+</head>
+<body>
+    <h1>Employee Management</h1>
+    <form action="/add_employee" method="POST">
+        <input type="text" name="name" placeholder="Employee Name" required>
+        <input type="text" name="position" placeholder="Position" required>
+        <input type="number" name="hourly_rate" placeholder="Hourly Rate" required>
+        <button type="submit">Add Employee</button>
+    </form>
+
+    <h2>Employees</h2>
+    <ul>
+        {% for employee in employees %}
+        <li>{{ employee[1] }} - {{ employee[2] }} - ${{ employee[3] }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/payroll">Manage Payroll</a>
+</body>
+</html>
